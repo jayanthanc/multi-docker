@@ -9,10 +9,10 @@ script:
   - docker run -e CI=true jayanthanc/react-test npm test
 
 after_success:
-  - docker build -t jayanathanc/multi-client ./client
-  - docker build -t jayanathanc/multi-nginx ./nginx
-  - docker build -t jayanathanc/multi-server ./server
-  - docker build -t jayanathanc/multi-worker ./worker
+  - docker build -t jayanthanc/multi-client ./client
+  - docker build -t jayanthanc/multi-nginx ./nginx
+  - docker build -t jayanthanc/multi-server ./server
+  - docker build -t jayanthanc/multi-worker ./worker
   # Login to docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push to docker hub
